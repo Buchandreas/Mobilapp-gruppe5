@@ -2,7 +2,6 @@ import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
-import CatScreen from './screens/CatScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SettingsScreen from './screens/SettingsScreen';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -11,6 +10,8 @@ import GPSComponent from './components/GPSComponent';
 import GPSandMapComponent from './components/GPSandMapComponent';
 import GesturesComponent from './components/GesturesComponent';
 import CameraComponent from './components/CameraComponent';
+import ProfileScreen from './screens/ProfileScreen';
+import CarpoolScreen from './screens/CarpoolScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -47,20 +48,22 @@ export default function App() {
 
             if (route.name === 'Home') {
               iconName = focused
-                ? 'information-circle'
-                : 'information-circle-outline';
-            } else if (route.name === 'Settings') {
+                ? 'home' : 'home-outline';
+            } else if (route.name === 'Profile') {
               iconName = focused ? 'list' : 'list-outline';
+            } else if (route.name === 'Carpool') {
+              iconName = focused ? 'car-sport' : 'car-sport-outline';
             }
 
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: 'tomato',
+          tabBarActiveTintColor: 'blue',
           tabBarInactiveTintColor: 'gray',
         })}>
         <Tab.Screen name="Home" component={StackNavigator} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="Carpool" component={CarpoolScreen} />
+        <Tab.Screen name="Profile" component={ProfileScreen} />
       </Tab.Navigator>
 
 
