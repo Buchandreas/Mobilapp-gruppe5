@@ -1,9 +1,7 @@
-// App.js
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, Animated } from 'react-native';
 
-
-const Login = () => {
+const Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [scaleValue] = useState(new Animated.Value(1));
@@ -14,7 +12,10 @@ const Login = () => {
       return;
     }
 
-    // Display the entered email and password
+    // Navigate to the MainTabs screen
+    navigation.replace('MainTabs');
+
+    // Optionally display the entered email and password
     Alert.alert('Login Info', `Email: ${email}\nPassword: ${password}`);
   };
 
@@ -35,8 +36,7 @@ const Login = () => {
 
   return (
     <View style={styles.container}>
-
-      <Text style={styles.header}>Login</Text>
+      <Text style={styles.header}>Velkommen til Carpooling</Text>
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: 40,
-    backgroundColor: '#ff69b4', // Neon pink
+    
     shadowColor: '#000000', // Black shadow
     shadowOffset: { width: 10, height: 10 },
     shadowOpacity: 0.7,
@@ -81,21 +81,17 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 48, // Huge text
     fontWeight: 'bold',
+    marginTop: 200,
     marginBottom: 40,
-    color: '#32cd32', // Lime green
+    color: '#000000', // Lime green
     textAlign: 'center',
-    textShadowColor: '#ff4500', // Orange shadow
-    textShadowOffset: { width: 4, height: 4 },
-    textShadowRadius: 20,
   },
   input: {
     height: 60, // Large height
-    borderColor: '#ff6347', // Tomato red
-    borderWidth: 5,
-    borderRadius: 20,
+    borderRadius: 10,
     marginBottom: 30,
     paddingHorizontal: 20,
-    backgroundColor: '#ffff00', // Yellow background
+    backgroundColor: '#fff', // Yellow background
     fontSize: 24, // Large font size
     color: '#0000ff', // Blue text
     shadowColor: '#000000', // Black shadow
@@ -104,9 +100,14 @@ const styles = StyleSheet.create({
     shadowRadius: 15,
   },
   button: {
-    backgroundColor: '#a52a2a', // Brown
+    backgroundColor: '#3D52D5', 
     paddingVertical: 20,
-    borderRadius: 10,
+    width: 200,
+    borderColor: '#fff',
+    borderWidth: 2,
+    margin: 'auto',
+    marginTop: 50,
+    borderRadius: 24,
     alignItems: 'center',
     shadowColor: '#000000', // Black shadow
     shadowOffset: { width: 10, height: 10 },
@@ -115,7 +116,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#ffffff', // White text
-    fontSize: 36, // Very large text
+    fontSize: 20, // Very large text
     fontWeight: 'bold',
   },
 });
