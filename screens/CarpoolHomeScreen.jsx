@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 
 
+
 const CarpoolHomeScreen = () => {
   const navigation = useNavigation();
   // dato skal laves færdig - kig på din chatgpt Anton under Hyperlink Phone tråd
@@ -32,7 +33,19 @@ const CarpoolHomeScreen = () => {
       <TextInput style={styles.input} placeholder="Enter something..." />
       
       <Text style={styles.inputTitle}>Dato</Text>
-      <TextInput style={styles.input} placeholder="Enter something else..." />
+      <TouchableOpacity onPress={() => setShow(true)} style={styles.input}>
+        <Text>{date.toDateString()}</Text>
+      </TouchableOpacity>
+      
+      {show && (
+        <DateTimePicker
+          testID="dateTimePicker"
+          value={date}
+          mode="date"
+          display="default"
+          onChange={onChange}
+        />
+      )}
       
       <View style={styles.buttonContainer}>
       <TouchableOpacity 
