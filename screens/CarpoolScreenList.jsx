@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, Image, FlatList, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const carpoolData = [
   {
@@ -28,7 +27,7 @@ const carpoolData = [
   // Add more carpool options as needed
 ];
 
-const CarpoolScreen = () => {
+const CarpoolScreenList = () => {
   const navigation = useNavigation(); // Hook to navigate to another screen
 
   const renderItem = ({ item }) => (
@@ -52,7 +51,7 @@ const CarpoolScreen = () => {
       />
       
       {/* Button to navigate to another screen */}
-      <TouchableOpacity style={styles.button} onPress={() => navigation.replace('CarpoolHomeScreen')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CarpoolHomeScreen')}>
         <Text style={styles.buttonText}>Find andre Carpools</Text>
       </TouchableOpacity>
     </SafeAreaView>
@@ -118,4 +117,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CarpoolScreen;
+export default CarpoolScreenList;

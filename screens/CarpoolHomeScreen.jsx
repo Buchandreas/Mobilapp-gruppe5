@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const CarpoolHomeScreen = () => {
   const navigation = useNavigation();
@@ -24,7 +23,7 @@ const CarpoolHomeScreen = () => {
       <View style={styles.buttonContainer}>
       <TouchableOpacity 
     style={styles.button} 
-    onPress={() => navigation.replace('CarpoolScreenList')}
+    onPress={() => navigation.navigate('CarpoolScreenList')}
   >
     <Text style={styles.buttonText}>Find Carpool List</Text>
   </TouchableOpacity>

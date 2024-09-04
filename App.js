@@ -32,8 +32,8 @@ function MainTabs() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === 'Home') {
-            iconName = focused ? 'home' : 'home-outline';
+          if (route.name === 'Map') {
+            iconName = focused ? 'map' : 'map-outline';
           } else if (route.name === 'Profile') {
             iconName = focused ? 'list' : 'list-outline';
           } else if (route.name === 'Carpool') {
@@ -46,9 +46,9 @@ function MainTabs() {
         tabBarInactiveTintColor: 'gray',
       })}
     >
-      <Tab.Screen name="Home" component={StackNavigator} />
       <Tab.Screen name="Carpool" component={CarpoolHomeScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Map" component={StackNavigator} />
     </Tab.Navigator>
   );
 }
