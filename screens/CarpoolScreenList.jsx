@@ -1,27 +1,28 @@
 import React from 'react';
 import { View, Text, Image, FlatList, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const carpoolData = [
   {
     id: '1',
     driverName: 'John Doe',
     details: 'Going from New York to Boston.',
-    time: 'Departure: 10:00 AM',
+    time: 'Arrival: 10:00 AM',
     imageUrl: 'https://example.com/driver1.jpg', // Replace with actual image URL
   },
   {
     id: '2',
     driverName: 'Jane Smith',
-    details: 'Traveling from San Francisco to Los Angeles.',
-    time: 'Departure: 2:00 PM',
+    details: 'Traveling from San Francisco to Boston.',
+    time: 'Arrival: 2:00 PM',
     imageUrl: 'https://example.com/driver2.jpg', // Replace with actual image URL
   },
   {
     id: '3',
     driverName: 'Alice Johnson',
-    details: 'Heading from Chicago to Seattle.',
-    time: 'Departure: 9:30 AM',
+    details: 'Heading from Chicago to Boston.',
+    time: 'Arrival: 9:30 AM',
     imageUrl: 'https://example.com/driver3.jpg', // Replace with actual image URL
   },
   // Add more carpool options as needed
@@ -51,8 +52,8 @@ const CarpoolScreen = () => {
       />
       
       {/* Button to navigate to another screen */}
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('TrackingScreen')}>
-        <Text style={styles.buttonText}>Vælg Carpool</Text>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.replace('CarpoolHomeScreen')}>
+        <Text style={styles.buttonText}>Find andre Carpools</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
@@ -63,6 +64,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     backgroundColor: '#f5f5f5',
+    marginTop: 50,
   },
   itemContainer: {
     flexDirection: 'row',

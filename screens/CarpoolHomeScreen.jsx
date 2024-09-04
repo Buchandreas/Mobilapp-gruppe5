@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const CarpoolHomeScreen = () => {
   const navigation = useNavigation();
@@ -14,25 +15,25 @@ const CarpoolHomeScreen = () => {
         Join our community today!
       </Text>
 
-      <Text style={styles.inputTitle}>Input 1</Text>
+      <Text style={styles.inputTitle}>Destination</Text>
       <TextInput style={styles.input} placeholder="Enter something..." />
       
-      <Text style={styles.inputTitle}>Input 2</Text>
+      <Text style={styles.inputTitle}>Dato</Text>
       <TextInput style={styles.input} placeholder="Enter something else..." />
       
       <View style={styles.buttonContainer}>
-        <TouchableOpacity 
-          style={styles.button} 
-          onPress={() => navigation.navigate('CarpoolScreenList')}
-        >
-          <Text style={styles.buttonText}>Go to Carpool List</Text>
-        </TouchableOpacity>
+      <TouchableOpacity 
+    style={styles.button} 
+    onPress={() => navigation.replace('CarpoolScreenList')}
+  >
+    <Text style={styles.buttonText}>Find Carpool List</Text>
+  </TouchableOpacity>
 
         <TouchableOpacity 
           style={styles.button} 
           onPress={() => navigation.navigate('CarpoolScreenCreate')}
         >
-          <Text style={styles.buttonText}>Go to Create Carpool</Text>
+          <Text style={styles.buttonText}>Create New Carpool</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -80,14 +81,14 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: '#3D52D5',
     paddingVertical: 15,
-    paddingHorizontal: 30,
+    paddingHorizontal: 20,
     borderRadius: 24,
     alignItems: 'center',
     marginHorizontal: 5,
   },
   buttonText: {
     color: '#ffffff',
-    fontSize: 18,
+    fontSize: 14,
     fontWeight: 'bold',
   },
 });

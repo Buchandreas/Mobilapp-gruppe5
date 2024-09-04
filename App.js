@@ -6,10 +6,12 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 import Login from './screens/Login'; // Ensure this is the correct path
 import HomeScreen from './screens/HomeScreen';
-import CarpoolScreen from './screens/CarpoolScreen';
+import CarpoolHomeScreen from './screens/CarpoolHomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import GPSandMapComponent from './components/GPSandMapComponent';
 import CameraComponent from './components/CameraComponent';
+import CarpoolScreenList from './screens/CarpoolScreenList';
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -45,7 +47,7 @@ function MainTabs() {
       })}
     >
       <Tab.Screen name="Home" component={StackNavigator} />
-      <Tab.Screen name="Carpool" component={CarpoolScreen} />
+      <Tab.Screen name="Carpool" component={CarpoolHomeScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
@@ -57,6 +59,8 @@ export default function App() {
       <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="MainTabs" component={MainTabs} />
+        <Stack.Screen name="CarpoolScreenList" component={CarpoolScreenList} />
+        <Stack.Screen name="CarpoolHomeScreen" component={CarpoolHomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
