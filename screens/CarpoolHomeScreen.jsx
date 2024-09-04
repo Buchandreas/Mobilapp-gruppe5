@@ -1,10 +1,24 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
+
+
 
 const CarpoolHomeScreen = () => {
   const navigation = useNavigation();
+  // dato skal laves færdig - kig på din chatgpt Anton under Hyperlink Phone tråd
+  const [date, setDate] = useState(new Date());
+  const [show, setShow] = useState(false);
 
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setShow(false);
+    setDate(currentDate);
+  };
+//
+
+  
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Carpool Home</Text>

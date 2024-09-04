@@ -47,8 +47,8 @@ function MainTabs() {
       })}
     >
       <Tab.Screen name="Carpool" component={CarpoolHomeScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
       <Tab.Screen name="Map" component={StackNavigator} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 }

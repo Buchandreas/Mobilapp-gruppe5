@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, Animated, SafeAreaView } from 'react-native';
 
-const ProfileScreen = () => {
+const ProfileScreen = ({navigation}) => {
   const userProfile = {
     name: "Jens Jensen",
     phoneNumber: "+45 12 21 12 21",
@@ -36,6 +36,7 @@ const ProfileScreen = () => {
   // Dummy log off function
   const handleLogOff = () => {
     console.log("Log Off button pressed");
+    navigation.replace('Login');
   };
 
   return (
