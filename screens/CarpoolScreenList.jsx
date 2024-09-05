@@ -52,7 +52,7 @@ const CarpoolScreenList = () => {
       
       {/* Button to navigate to another screen */}
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CarpoolHomeScreen')}>
-        <Text style={styles.buttonText}>Find andre Carpools</Text>
+        <Text style={styles.buttonText}>Find other Carpools</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     backgroundColor: '#f5f5f5',
-    marginTop: 50,
+    marginTop: 10,
   },
   itemContainer: {
     flexDirection: 'row',

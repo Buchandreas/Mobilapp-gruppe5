@@ -23,17 +23,17 @@ const CarpoolHomeScreen = () => {
   
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Carpool Home</Text>
+      <Text style={styles.title}>Find you TripBuddy!</Text>
       <Text style={styles.paragraph}>
-        Welcome to our carpooling app! Find rides, share journeys, and connect with fellow travelers. 
+        Welcome to our TripBuddy carpooling app! Find rides, share journeys, and connect with fellow travelers. 
         Make your travel experience more enjoyable and eco-friendly. 
-        Join our community today!
+        Find your ride today!
       </Text>
 
-      <Text style={styles.inputTitle}>Destination</Text>
-      <TextInput style={styles.input} placeholder="Enter something..." />
+      <Text style={styles.inputTitle}>What's your destination?</Text>
+      <TextInput style={styles.input} placeholder="Tell us what city" />
       
-      <Text style={styles.inputTitle}>Dato</Text>
+      <Text style={styles.inputTitle}>What date do you need the ride?</Text>
       <TouchableOpacity onPress={() => setShow(true)} style={styles.input}>
         <Text>{date.toDateString()}</Text>
       </TouchableOpacity>
