@@ -1,119 +1,93 @@
-import React from 'react';
-import { View, Text, Image, FlatList, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, ScrollView } from 'react-native';
 
-const carpoolData = [
-  {
-    id: '1',
-    driverName: 'John Doe',
-    details: 'Going from New York to Boston.',
-    time: 'Departure: 10:00 AM',
-    imageUrl: 'https://example.com/driver1.jpg', // Replace with actual image URL
-  },
-  {
-    id: '2',
-    driverName: 'Jane Smith',
-    details: 'Traveling from San Francisco to Los Angeles.',
-    time: 'Departure: 2:00 PM',
-    imageUrl: 'https://example.com/driver2.jpg', // Replace with actual image URL
-  },
-  {
-    id: '3',
-    driverName: 'Alice Johnson',
-    details: 'Heading from Chicago to Seattle.',
-    time: 'Departure: 9:30 AM',
-    imageUrl: 'https://example.com/driver3.jpg', // Replace with actual image URL
-  },
-  // Add more carpool options as needed
-];
+const CarpoolScreenCreate = () => {
+  const [input1, setInput1] = useState('');
+  const [input2, setInput2] = useState('');
+  const [input3, setInput3] = useState('');
 
-const CarpoolScreen = () => {
-  const navigation = useNavigation(); // Hook to navigate to another screen
-
-  const renderItem = ({ item }) => (
-    <View style={styles.itemContainer}>
-      <Image source={{ uri: item.imageUrl }} style={styles.image} />
-      <View style={styles.textContainer}>
-        <Text style={styles.driverName}>{item.driverName}</Text>
-        <Text style={styles.details}>{item.details}</Text>
-        <Text style={styles.time}>{item.time}</Text>
-      </View>
-    </View>
-  );
+  const handleSubmit = () => {
+    // Handle button press here
+    console.log('Input1:', input1);
+    console.log('Input2:', input2);
+    console.log('Input3:', input3);
+  };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={carpoolData}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-        showsVerticalScrollIndicator={false}
-      />
-      
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.title}>Start din fælleskørsel</Text>
+
+      <Text style={styles.paragraph}>
+        Opret din sammenkørsel og del din rute med andre. Spar penge, mød nye mennesker, og rejs grønnere.
+      </Text>
+
+      <View style={styles.inputContainer}>
+        <Text style={styles.inputTitle}>Tidspunkt</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Indtast tidspunkt"
+          value={input1}
+          onChangeText={setInput1}
+        />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <Text style={styles.inputTitle}>Pris pr. passager</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Indtast pris"
+          value={input2}
+          onChangeText={setInput2}
+        />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <Text style={styles.inputTitle}>Antal passagerer</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Indtast antal"
+          value={input3}
+          onChangeText={setInput3}
+        />
+      </View>
+
       {/* Button to navigate to another screen */}
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('tracking-page')}>
-        <Text style={styles.buttonText}>Vælg carpool</Text>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CarpoolHomeScreen')}>
+        <Text style={styles.buttonText}>Find other Carpools</Text>
       </TouchableOpacity>
-    </SafeAreaView>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: '#f5f5f5',
+    padding: 20,
+    justifyContent: 'center',
   },
-  itemContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#fff',
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  paragraph: {
+    fontSize: 16,
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  inputContainer: {
+    marginBottom: 15,
+  },
+  inputTitle: {
+    fontSize: 18,
+    marginBottom: 5,
+  },
+  input: {
+    borderColor: 'gray',
+    borderWidth: 1,
     padding: 10,
-    marginVertical: 8,
-    borderRadius: 8,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 8,
-    elevation: 2, // For Android shadow
-  },
-  image: {
-    width: 60,
-    height: 60,
-    borderRadius: 30, // Circle image
-    marginRight: 15,
-  },
-  textContainer: {
-    flex: 1,
-  },
-  driverName: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  details: {
-    fontSize: 14,
-    color: '#666',
-  },
-  time: {
-    fontSize: 12,
-    color: '#999',
-  },
-  button: {
-    backgroundColor: '#3D52D5',
-    paddingVertical: 15,
-    borderRadius: 24,
-    alignItems: 'center',
-    marginTop: 20,
-  },
-  buttonText: {
-    color: '#ffffff',
-    fontSize: 18,
-    fontWeight: 'bold',
+    borderRadius: 5,
   },
 });
 
-export default CarpoolScreen;
+export default CarpoolScreenCreate;

@@ -7,6 +7,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import Login from './screens/Login';
 import CarpoolHomeScreen from './screens/CarpoolHomeScreen';
 import CarpoolScreenList from './screens/CarpoolScreenList';
+import CarpoolScreenCreate from './screens/CarpoolScreenCreate';
 import ProfileScreen from './screens/ProfileScreen';
 import GPSandMapComponent from './components/GPSandMapComponent';
 
@@ -26,6 +27,11 @@ function CarpoolStackNavigator() {
       <Stack.Screen 
         name="CarpoolScreenList" 
         component={CarpoolScreenList} 
+        options={{ headerShown: true, title: 'Choose your carpool!', headerBackTitle: 'Back' }} 
+      />
+      <Stack.Screen 
+        name="CarpoolScreenCreate" 
+        component={CarpoolScreenCreate} 
         options={{ headerShown: true, title: 'Choose your carpool!', headerBackTitle: 'Back' }} 
       />
     </Stack.Navigator>
