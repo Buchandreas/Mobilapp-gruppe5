@@ -5,11 +5,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 import Login from './screens/Login'; // Ensure this is the correct path
-import HomeScreen from './screens/HomeScreen';
 import CarpoolHomeScreen from './screens/CarpoolHomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import GPSandMapComponent from './components/GPSandMapComponent';
-import CameraComponent from './components/CameraComponent';
 import CarpoolScreenList from './screens/CarpoolScreenList';
 
 
