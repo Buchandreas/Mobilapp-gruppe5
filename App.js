@@ -18,7 +18,6 @@ function StackNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={GPSandMapComponent} options={{ headerShown: false }} />
-      <Stack.Screen name="Cat" component={CameraComponent} />
     </Stack.Navigator>
   );
 }
