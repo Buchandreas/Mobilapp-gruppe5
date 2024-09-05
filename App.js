@@ -18,16 +18,8 @@ const Tab = createBottomTabNavigator();
 function CarpoolStackNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen 
-        name="CarpoolHomeScreen" 
-        component={CarpoolHomeScreen} 
-        options={{ headerShown: true, title: 'Carpool Home' }} 
-      />
-      <Stack.Screen 
-        name="CarpoolScreenList" 
-        component={CarpoolScreenList} 
-        options={{ headerShown: true, title: 'Carpool List', headerBackTitle: 'Back' }} 
-      />
+      <Stack.Screen name="CarpoolHomeScreen" component={CarpoolHomeScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="CarpoolScreenList" component={CarpoolScreenList} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }
@@ -36,11 +28,7 @@ function CarpoolStackNavigator() {
 function MapStackNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen 
-        name="Home" 
-        component={GPSandMapComponent} 
-        options={{ headerShown: true, title: 'Map' }} 
-      />
+      <Stack.Screen name="Home" component={GPSandMapComponent} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }
@@ -69,7 +57,7 @@ function MainTabs() {
     >
       <Tab.Screen name="Carpool" component={CarpoolStackNavigator} options={{ headerShown: false }} />
       <Tab.Screen name="Map" component={MapStackNavigator} options={{ headerShown: false }} />
-      <Tab.Screen name="Profile" component={ProfileScreen} options={{ headerShown: true, title: 'Profile' }} />
+      <Tab.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
     </Tab.Navigator>
   );
 }
@@ -78,8 +66,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Login" component={Login} options={{ title: 'Login' }} />
-        <Stack.Screen name="MainTabs" component={MainTabs} options={{ headerShown: false }} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="MainTabs" component={MainTabs} />
       </Stack.Navigator>
     </NavigationContainer>
   );
