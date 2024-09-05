@@ -4,17 +4,28 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-import Login from './screens/Login'; // Ensure this is the correct path
+import Login from './screens/Login';
 import CarpoolHomeScreen from './screens/CarpoolHomeScreen';
+import CarpoolScreenList from './screens/CarpoolScreenList';
 import ProfileScreen from './screens/ProfileScreen';
 import GPSandMapComponent from './components/GPSandMapComponent';
-import CarpoolScreenList from './screens/CarpoolScreenList';
 
-
+// Stack and Tab Navigator
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function StackNavigator() {
+// Stack for Carpool screens inside the Carpool tab
+function CarpoolStackNavigator() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="CarpoolHomeScreen" component={CarpoolHomeScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="CarpoolScreenList" component={CarpoolScreenList} options={{ headerShown: false }} />
+    </Stack.Navigator>
+  );
+}
+
+// Stack for the Map screen
+function MapStackNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={GPSandMapComponent} options={{ headerShown: false }} />
@@ -22,6 +33,7 @@ function StackNavigator() {
   );
 }
 
+// Main Tab Navigator
 function MainTabs() {
   return (
     <Tab.Navigator
@@ -43,9 +55,9 @@ function MainTabs() {
         tabBarInactiveTintColor: 'gray',
       })}
     >
-      <Tab.Screen name="Carpool" component={CarpoolHomeScreen} />
-      <Tab.Screen name="Map" component={StackNavigator} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Carpool" component={CarpoolStackNavigator} options={{ headerShown: false }} />
+      <Tab.Screen name="Map" component={MapStackNavigator} options={{ headerShown: false }} />
+      <Tab.Screen name="Profile" component={ProfileScreen} options={{ headerShown: false }} />
     </Tab.Navigator>
   );
 }
@@ -56,8 +68,6 @@ export default function App() {
       <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="MainTabs" component={MainTabs} />
-        <Stack.Screen name="CarpoolScreenList" component={CarpoolScreenList} />
-        <Stack.Screen name="CarpoolHomeScreen" component={CarpoolHomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
