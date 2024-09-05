@@ -76,13 +76,14 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: '#333',
-    marginBottom: 10,
+    marginVertical: 20,
     textAlign: 'center',
   },
   paragraph: {
     fontSize: 16,
     color: '#666',
     marginBottom: 20,
+    marginHorizontal: 20,
     textAlign: 'center',
   },
   inputTitle: {
@@ -90,6 +91,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#333',
     marginVertical: 10,
+    marginLeft: 10,
   },
   input: {
     height: 50,
@@ -98,6 +100,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingHorizontal: 10,
     marginBottom: 20,
+    marginHorizontal: 10,
   },
   buttonContainer: {
     flexDirection: 'row',
