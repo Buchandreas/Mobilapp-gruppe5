@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, ScrollView } from 'react-native';
 
-const CarpoolScreenCreate = () => {
+const CarpoolScreenCreate = ({ navigation }) => {
   const [input1, setInput1] = useState('');
   const [input2, setInput2] = useState('');
   const [input3, setInput3] = useState('');
@@ -52,7 +52,7 @@ const CarpoolScreenCreate = () => {
       </View>
 
       {/* Button to navigate to another screen */}
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CarpoolHomeScreen')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CarpoolScreenAccept')}>
         <Text style={styles.buttonText}>Create carpool</Text>
       </TouchableOpacity>
     </ScrollView>

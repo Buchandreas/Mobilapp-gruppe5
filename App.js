@@ -10,6 +10,8 @@ import CarpoolScreenList from './screens/CarpoolScreenList';
 import CarpoolScreenCreate from './screens/CarpoolScreenCreate';
 import ProfileScreen from './screens/ProfileScreen';
 import GPSandMapComponent from './components/GPSandMapComponent';
+import CarpoolScreenAccept from './screens/CarpoolScreenAccept';
+
 
 // Stack and Tab Navigator
 const Stack = createNativeStackNavigator();
@@ -32,6 +34,11 @@ function CarpoolStackNavigator() {
       <Stack.Screen 
         name="CarpoolScreenCreate" 
         component={CarpoolScreenCreate} 
+        options={{ headerShown: true, title: 'Choose your carpool!', headerBackTitle: 'Back' }} 
+      />
+      <Stack.Screen 
+        name="CarpoolScreenAccept" 
+        component={CarpoolScreenAccept} 
         options={{ headerShown: true, title: 'Choose your carpool!', headerBackTitle: 'Back' }} 
       />
     </Stack.Navigator>
