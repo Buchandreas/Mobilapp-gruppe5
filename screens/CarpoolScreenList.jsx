@@ -8,21 +8,21 @@ const carpoolData = [
     driverName: 'John Doe',
     details: 'Going from New York to Boston.',
     time: 'Arrival: 10:00 AM',
-    imageUrl: 'https://example.com/driver1.jpg', // Replace with actual image URL
+    imageUrl: 'https://thumbs.dreamstime.com/b/portrait-handsome-smiling-young-man-folded-arms-smiling-joyful-cheerful-men-crossed-hands-isolated-studio-shot-172869765.jpg', // Replace with actual image URL
   },
   {
     id: '2',
     driverName: 'Jane Smith',
     details: 'Traveling from San Francisco to Boston.',
     time: 'Arrival: 2:00 PM',
-    imageUrl: 'https://example.com/driver2.jpg', // Replace with actual image URL
+    imageUrl: 'https://img.freepik.com/free-photo/portrait-young-businesswoman-holding-eyeglasses-hand-against-gray-backdrop_23-2148029483.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1725494400&semt=ais_hybrid', // Replace with actual image URL
   },
   {
     id: '3',
     driverName: 'Alice Johnson',
     details: 'Heading from Chicago to Boston.',
     time: 'Arrival: 9:30 AM',
-    imageUrl: 'https://example.com/driver3.jpg', // Replace with actual image URL
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaHB0U1E8gz5P4iXQV0c2H49CRo_9F72YokQ&s', // Replace with actual image URL
   },
   // Add more carpool options as needed
 ];
