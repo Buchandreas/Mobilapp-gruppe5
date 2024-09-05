@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 
 
