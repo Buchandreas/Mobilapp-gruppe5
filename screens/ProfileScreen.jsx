@@ -99,10 +99,6 @@ const styles = StyleSheet.create({
     marginTop: 20, // Space between buttons
     borderRadius: 24,
     alignItems: 'center',
-    shadowColor: '#000000', // Black shadow
-    shadowOffset: { width: 10, height: 10 },
-    shadowOpacity: 0.8,
-    shadowRadius: 25,
   },
   buttonText: {
     color: '#ffffff', // White text

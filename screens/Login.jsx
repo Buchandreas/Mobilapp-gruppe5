@@ -73,10 +73,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 40,
     
-    shadowColor: '#000000', // Black shadow
-    shadowOffset: { width: 10, height: 10 },
-    shadowOpacity: 0.7,
-    shadowRadius: 20,
+    
   },
   header: {
     fontSize: 48, // Huge text
@@ -93,11 +90,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     backgroundColor: '#fff', // Yellow background
     fontSize: 24, // Large font size
-    color: '#0000ff', // Blue text
-    shadowColor: '#000000', // Black shadow
-    shadowOffset: { width: 5, height: 5 },
-    shadowOpacity: 0.5,
-    shadowRadius: 15,
+    color: '#000000', // Blue text
   },
   button: {
     backgroundColor: '#3D52D5', 
@@ -109,10 +102,6 @@ const styles = StyleSheet.create({
     marginTop: 50,
     borderRadius: 24,
     alignItems: 'center',
-    shadowColor: '#000000', // Black shadow
-    shadowOffset: { width: 10, height: 10 },
-    shadowOpacity: 0.8,
-    shadowRadius: 25,
   },
   buttonText: {
     color: '#ffffff', // White text
