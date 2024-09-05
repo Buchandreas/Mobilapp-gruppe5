@@ -23,7 +23,7 @@ const CarpoolHomeScreen = () => {
   
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Find you TripBuddy!</Text>
+      <Text style={styles.title}>Find your TripBuddy!</Text>
       <Text style={styles.paragraph}>
         Welcome to our TripBuddy carpooling app! Find rides, share journeys, and connect with fellow travelers. 
         Make your travel experience more enjoyable and eco-friendly. 
