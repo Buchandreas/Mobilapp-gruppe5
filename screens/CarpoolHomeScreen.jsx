@@ -96,12 +96,13 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 50,
-    borderColor: '#ccc',
-    borderWidth: 1,
+    borderColor: 'blue',
+    borderWidth: 2,
     borderRadius: 8,
     paddingHorizontal: 10,
     marginBottom: 20,
     marginHorizontal: 10,
+    justifyContent: 'center',
   },
   buttonContainer: {
     flexDirection: 'row',
