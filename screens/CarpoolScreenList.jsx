@@ -8,7 +8,7 @@ const carpoolData = [
     details: 'Going from New York to Boston.',
     time: 'Arrival: 10:00 AM',
     imageUrl: 'https://thumbs.dreamstime.com/b/portrait-handsome-smiling-young-man-folded-arms-smiling-joyful-cheerful-men-crossed-hands-isolated-studio-shot-172869765.jpg',
-    alertMessage: 'John is going from New York to Boston, leaving at 8:00 AM. 3 spots left!',
+    alertMessage: '\n\n Leaving at 2:00 PM. 3 spots left! \n\n Price: Contact driver \n\n Payment method: Stripe \n\n Contact info: +45 86 37 95 39',
   },
   {
     id: '2',
@@ -16,7 +16,7 @@ const carpoolData = [
     details: 'Traveling from San Francisco to Boston.',
     time: 'Arrival: 2:00 PM',
     imageUrl: 'https://img.freepik.com/free-photo/portrait-young-businesswoman-holding-eyeglasses-hand-against-gray-backdrop_23-2148029483.jpg',
-    alertMessage: 'Jane is traveling from San Francisco to Boston, leaving at 12:00 PM. 2 spots left!',
+    alertMessage: '\n\n Leaving at 8:00 AM. 2 spots left! \n\n Price: Contact driver \n\n Payment method: Stripe \n\n Contact info: +45 68 73 95 10',
   },
   {
     id: '3',
@@ -24,7 +24,7 @@ const carpoolData = [
     details: 'Heading from Chicago to Boston.',
     time: 'Arrival: 9:30 AM',
     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaHB0U1E8gz5P4iXQV0c2H49CRo_9F72YokQ&s',
-    alertMessage: 'Alice is heading from Chicago to Boston, leaving at 7:30 AM. 1 spot left!',
+    alertMessage: '\n\n Leaving at 6:00 PM. 4 spots left! \n\n Price: Contact driver \n\n Payment method: Stripe \n\n Contact info: +45 47 92 74 92',
   },
   // Add more carpool options as needed
 ];

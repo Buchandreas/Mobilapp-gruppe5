@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, Animated } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, Animated, Image } from 'react-native';
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -15,8 +15,6 @@ const Login = ({ navigation }) => {
     // Navigate to the MainTabs screen
     navigation.replace('MainTabs');
 
-    // Optionally display the entered email and password
-    Alert.alert('Login Info', `Email: ${email}\nPassword: ${password}`);
   };
 
   const animateButton = () => {
@@ -36,7 +34,15 @@ const Login = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Velkommen til Carpooling</Text>
+      {/* Logo at the top */}
+      <Image
+        source={{ uri: 'https://i.ibb.co/1KKCf3M/Group.png' }} // Replace with your logo URL
+        style={styles.logo}
+        resizeMode="contain"
+      />
+      
+      <Text style={styles.header}>Welcome to TripBuddy!</Text>
+      
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -46,7 +52,7 @@ const Login = ({ navigation }) => {
         onChangeText={setEmail}
       />
       <TextInput
-        style={styles.input}
+        style={styles.input1}
         placeholder="Password"
         secureTextEntry
         value={password}
@@ -63,6 +69,9 @@ const Login = ({ navigation }) => {
           Login
         </Animated.Text>
       </TouchableOpacity>
+      <Text style={styles.signup}>
+        Sign up with email ➤
+      </Text>
     </View>
   );
 };
@@ -72,13 +81,15 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: 40,
-    
-    
+  },
+  logo: {
+    width: 200, // Adjust the size to your preference
+    height: 200,
+    alignSelf: 'center', // Centers the logo horizontally
   },
   header: {
     fontSize: 48, // Huge text
     fontWeight: 'bold',
-    marginTop: 200,
     marginBottom: 40,
     color: '#000000', // Lime green
     textAlign: 'center',
@@ -88,9 +99,18 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 30,
     paddingHorizontal: 20,
-    backgroundColor: '#fff', // Yellow background
-    fontSize: 24, // Large font size
-    color: '#000000', // Blue text
+    backgroundColor: '#fff',
+    fontSize: 24,
+    color: '#000000',
+  },
+  input1: {
+    height: 60, // Large height
+    borderRadius: 10,
+    marginBottom: 30,
+    paddingHorizontal: 20,
+    backgroundColor: '#fff',
+    fontSize: 24,
+    color: '#000000',
   },
   button: {
     backgroundColor: '#3D52D5', 
@@ -98,16 +118,24 @@ const styles = StyleSheet.create({
     width: 200,
     borderColor: '#fff',
     borderWidth: 2,
-    margin: 'auto',
-    marginTop: 50,
+    alignSelf: 'center',
     borderRadius: 24,
     alignItems: 'center',
+    marginBottom: 10,
   },
   buttonText: {
-    color: '#ffffff', // White text
-    fontSize: 20, // Very large text
+    color: '#ffffff',
+    fontSize: 20,
     fontWeight: 'bold',
   },
+  signup: {
+    fontSize: 18,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    marginBottom: 10,
+    color: '#3D52D5',
+    marginBottom: 150,
+  }
 });
 
 export default Login;
