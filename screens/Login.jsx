@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, Animated, Image } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, Animated, ImageBackground,Image } from 'react-native';
 
 const Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -14,7 +14,6 @@ const Login = ({ navigation }) => {
 
     // Navigate to the MainTabs screen
     navigation.replace('MainTabs');
-
   };
 
   const animateButton = () => {
@@ -33,50 +32,59 @@ const Login = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-      {/* Logo at the top */}
-      <Image
-        source={{ uri: 'https://i.ibb.co/1KKCf3M/Group.png' }} // Replace with your logo URL
-        style={styles.logo}
-        resizeMode="contain"
-      />
-      
-      <Text style={styles.header}>Welcome to TripBuddy!</Text>
-      
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        keyboardType="email-address"
-        autoCapitalize="none"
-        value={email}
-        onChangeText={setEmail}
-      />
-      <TextInput
-        style={styles.input1}
-        placeholder="Password"
-        secureTextEntry
-        value={password}
-        onChangeText={setPassword}
-      />
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => {
-          animateButton();
-          handleLogin();
-        }}
-      >
-        <Animated.Text style={[styles.buttonText, { transform: [{ scale: scaleValue }] }]}>
-          Login
-        </Animated.Text>
-      </TouchableOpacity>
-      <Text style={styles.signup}>
-        Sign up with email ➤
-      </Text>
-    </View>
+    <ImageBackground 
+      source={{ uri: 'https://i.ibb.co/BjhQ8gB/openart-image-LJt32-Jn9-1724919521455-raw-1.png' }} // Replace with your background image URL
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <View style={styles.container}>
+        {/* Logo at the top */}
+        <Image
+          source={{ uri: 'https://i.ibb.co/1KKCf3M/Group.png' }} // Replace with your logo URL
+          style={styles.logo}
+          resizeMode="contain"
+        />
+        
+        <Text style={styles.header}>Welcome to TripBuddy!</Text>
+        
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          keyboardType="email-address"
+          autoCapitalize="none"
+          value={email}
+          onChangeText={setEmail}
+        />
+        <TextInput
+          style={styles.input1}
+          placeholder="Password"
+          secureTextEntry
+          value={password}
+          onChangeText={setPassword}
+        />
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            animateButton();
+            handleLogin();
+          }}
+        >
+          <Animated.Text style={[styles.buttonText, { transform: [{ scale: scaleValue }] }]}>
+            Login
+          </Animated.Text>
+        </TouchableOpacity>
+        <Text style={styles.signup}>
+          Sign up with email ➤
+        </Text>
+      </View>
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -90,7 +98,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 48, // Huge text
     fontWeight: 'bold',
-    marginBottom: 40,
+    marginBottom: 60,
     color: '#000000', // Lime green
     textAlign: 'center',
   },
@@ -117,7 +125,6 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     width: 200,
     borderColor: '#fff',
-    borderWidth: 2,
     alignSelf: 'center',
     borderRadius: 24,
     alignItems: 'center',
@@ -132,9 +139,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     justifyContent: 'center',
     alignSelf: 'center',
-    marginBottom: 10,
+    marginTop: 10,
     color: '#3D52D5',
-    marginBottom: 150,
+    marginBottom: 200,
+    fontWeight: 'bold',
   }
 });
 
